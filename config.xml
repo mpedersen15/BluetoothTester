@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget 
+        id          = "com.MR.bluetoothtest"
+        version     = "1.0.0" >
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>Blue Tooth Tester</name>
+
+    <description>
+        App that tests bluetooth LE connection with BLE shield. 
+    </description>
+
+    <author >
+        Matt Pedersen 
+    </author>
+
+	<gap:plugin name="com.megster.cordova.bluetoothserial" />
+</widget>
