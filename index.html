@@ -11,7 +11,7 @@
 		$(document).on("pageinit",function(){
 			$('.toggleLED').hide();
 			$('.connect').click(function(){
-				bluetoothSerial.list(function(devices){
+				/*bluetoothSerial.list(function(devices){
 					devices.forEach(function(device){
 						$('#para').append("<p>"+device.address+"</p>");
 					},function(){});
@@ -29,7 +29,12 @@
 					function(){
 						$('.status').html("Failed");
 					}
-				);
+				);*/
+				bluetoothSerial.isEnabled(function(){
+					$('.status').html("Bluetooth Enabled");
+				},function(){
+					$('.status').html("Bluetooth Not Enabled");
+				});
 			});
 		});
 	</script>
