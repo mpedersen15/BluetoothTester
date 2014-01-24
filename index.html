@@ -14,7 +14,7 @@
 				bluetoothSerial.list(function(devices){
 					devices.forEach(function(device){
 						$('#para').append("<p>"+device.address+"</p>");
-					},failure
+					},function(){}
 				}
 				
 				bluetoothSerial.connect("",
