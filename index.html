@@ -9,18 +9,19 @@
 	
 	<script>
 		$(document).on("pageinit",function(){
+			$('.toggleLED').hide();
 			$('.connect').click(function(){
 				bluetoothSerial.connect("",
 					//On Success
 					function(){
-						alert('Connection Success');
+						$('.status').html("Successful");
 						$('.connect').hide(100,function(){
 							$('.toggleLED').show(100);
 						});
 					},
 					//On Failure
 					function(){
-						alert('Connection Failed');	
+						$('.status').html("Failed");
 					}
 				);
 			});
@@ -30,7 +31,8 @@
 </head>
 
 <body>
-	<a href="#" data-role="button" class="connect">toggleLED</a>
+	<p>Status of connection: <span class="status">Not initiated</span></p>
+	<a href="#" data-role="button" class="connect">Connect</a>
 	<a href="#" data-role="button" class="toggleLED">toggleLED</a>
 </body>
 	
