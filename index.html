@@ -11,6 +11,12 @@
 		$(document).on("pageinit",function(){
 			$('.toggleLED').hide();
 			$('.connect').click(function(){
+				bluetoothSerial.list(function(devices){
+					devices.forEach(function(device){
+						$('#para').append("<p>"+device.address+"</p>");
+					},failure
+				}
+				
 				bluetoothSerial.connect("",
 					//On Success
 					function(){
@@ -31,7 +37,7 @@
 </head>
 
 <body>
-	<p>Status of connection: <span class="status">Not initiated</span></p>
+	<p id="para">Status of connection: <span class="status">Not initiated</span></p>
 	<a href="#" data-role="button" class="connect">Connect</a>
 	<a href="#" data-role="button" class="toggleLED">toggleLED</a>
 </body>
